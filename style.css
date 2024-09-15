@@ -116,7 +116,8 @@ h1 {
 }
 
 .wishes-texts {
-    width: 350px;
+    max-width: 350px;
+    width: 100%;
     height: auto;
     text-align: center;
     font-size: 1.4rem;
@@ -125,3 +126,11 @@ h1 {
     font-weight: 500;
     margin: 15px 8px;
 }
+@media (max-width: 600px) {
+    .wish{
+      font-size: 1.3rem; /* Adjust the font size as needed */
+      white-space: nowrap; /* Prevents text from wrapping */
+      overflow: hidden; /* Hides overflowing text if it doesn't fit */
+      text-overflow: ellipsis; /* Adds "..." at the end of overflowing text */
+    }
+  }
