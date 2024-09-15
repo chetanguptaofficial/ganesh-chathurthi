@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.ads-section{
+    display: flex;
+    justify-content: center;
+}
+.main {
+    width: 100%;
+    height: auto;
+    min-width: 350px;
+    background-image: url(images/backgroung.jpg);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+@keyframes verticalScrollUp {
+    0% {
+        transform: translateY(100vh); /* Start from below the viewport */
+    }
+    100% {
+        transform: translateY(-100%); /* Scroll to the top of the viewport */
+    }
+}
+
+@keyframes verticalScrollDown {
+    0% {
+        transform: translateY(-100vh); /* Start from above the viewport */
+    }
+    100% {
+        transform: translateY(100%); /* Scroll to the bottom of the viewport */
+    }
+}
+
+.m1, .m2 {
+    width: auto;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    /* Hide overflowing content */
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    justify-content: space-between; /* Ensure equal spacing between images */
+}
+
+.m1 {
+    left: 1%; /* Left side positioning */
+    animation: verticalScrollUp 10s linear infinite; /* Animate upwards */
+}
+
+.m2 {
+    right: 1%; /* Right side positioning */
+    animation: verticalScrollDown 10s linear infinite; /* Animate downwards */
+}
+
+.m1 img, .m2 img {
+    width: 40px; /* Set fixed image width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure equal space between images */
+}
+.wish{
+    display: flex;
+    justify-content: center;
+    margin: 15px 8px;
+    color: #f2ea08;;
+    background-image: url(images/ice2.gif);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.name-section{
+    display: flex;
+    justify-content: center;
+    margin: 15px 8px;
+}
+figure {
+    height: 200px;
+    perspective: 500px; /* Adds perspective to 3D effect */
+}
+
+h1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font: 900 35px 'Concert One', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.5;
+    animation: glow 2s ease-in-out infinite, wobble 5s ease-in-out infinite;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg); /* Initial rotation */
+}
+
+/* Glow Animation for h1 text */
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 30px red; }
+    25% { text-shadow: 0 0 30px orange; }
+    50% { text-shadow: 0 0 30px forestgreen; }
+    75% { text-shadow: 0 0 30px cyan; }
+}
+
+/* Wobble Animation for 3D effect */
+@keyframes wobble {
+    0%, 100% { transform: rotateY(0deg); }
+    25% { transform: rotateY(20deg); }
+    50% { transform: rotateY(-20deg); }
+    75% { transform: rotateY(10deg); }
+}
+
+.wishes-texts {
+    width: 350px;
+    height: auto;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #f2ea08;
+    font-weight: 500;
+    margin: 15px 8px;
+}
